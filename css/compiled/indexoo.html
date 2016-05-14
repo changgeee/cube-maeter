@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript' src='http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js'></script>
+<script type='text/javascript' src='http://cdn.bootcss.com/angular.js/1.4.5/angular.js></script>
+<script type='text/javascript' src='ng-infinite-scroll.js'></script>
+	<title></title>
+</head>
+<body>
+<div ng-controller='PostListController'>
+     <div infinite-scroll='demo.nextPage()' infinite-scroll-disabled='demo.busy' infinite-scroll-distance='1'>
+         <div ng-repeat='item in demo.items'>
+            <p>
+                <input type="hidden" value="{{item.PostId}}" />
+                 <label>{{item.WriterName}}</label>
+                  <label>{{item.WriterMail}}</label>
+                <label>{{item.WreckerName}}</label>
+                <label>{{item.StartDate}}</label>
+               <label>{{item.Location}}</label>
+                <label>{{item.Story}}</label>
+            </p>
+        </div>
+        <div ng-show='demo.busy'>Loading data...</div>
+    </div>
+</div>
+</body>
+</html>
